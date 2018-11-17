@@ -10,6 +10,4 @@ run/
 .DS_Store
 *.sw*
 *.un~
-logs/
-run/
 package-lock.json
