@@ -1,0 +1,160 @@
+2018-11-10 18:06:18,166 WARN 26630 [-/127.0.0.1/-/1ms POST /user/loginAction] missing csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2018-11-10 18:06:18,168 WARN 26630 [-/127.0.0.1/-/3ms POST /user/loginAction] nodejs.ForbiddenError: missing csrf token
+    at Object.throw (/Users/JI/Public/vscode/egg-example/node_modules/koa/lib/context.js:96:11)
+    at Object.assertCsrf (/Users/JI/Public/vscode/egg-example/node_modules/egg-security/app/extend/context.js:148:17)
+    at csrf (/Users/JI/Public/vscode/egg-example/node_modules/egg-security/lib/middlewares/csrf.js:31:9)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at /Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/JI/Public/vscode/egg-example/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/JI/Public/vscode/egg-example/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+message: "missing csrf token"
+pid: 26630
+hostname: localhost
+
+2018-11-10 18:06:33,273 WARN 26630 [-/127.0.0.1/-/1ms POST /user/loginAction] invalid csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2018-11-10 18:06:33,276 WARN 26630 [-/127.0.0.1/-/3ms POST /user/loginAction] nodejs.ForbiddenError: invalid csrf token
+    at Object.throw (/Users/JI/Public/vscode/egg-example/node_modules/koa/lib/context.js:96:11)
+    at Object.assertCsrf (/Users/JI/Public/vscode/egg-example/node_modules/egg-security/app/extend/context.js:157:17)
+    at csrf (/Users/JI/Public/vscode/egg-example/node_modules/egg-security/lib/middlewares/csrf.js:31:9)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at /Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/JI/Public/vscode/egg-example/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/JI/Public/vscode/egg-example/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+message: "invalid csrf token"
+pid: 26630
+hostname: localhost
+
+2018-11-10 18:06:52,703 WARN 26630 [-/127.0.0.1/-/0ms POST /user/loginAction] invalid csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2018-11-10 18:06:52,704 WARN 26630 [-/127.0.0.1/-/1ms POST /user/loginAction] nodejs.ForbiddenError: invalid csrf token
+    at Object.throw (/Users/JI/Public/vscode/egg-example/node_modules/koa/lib/context.js:96:11)
+    at Object.assertCsrf (/Users/JI/Public/vscode/egg-example/node_modules/egg-security/app/extend/context.js:157:17)
+    at csrf (/Users/JI/Public/vscode/egg-example/node_modules/egg-security/lib/middlewares/csrf.js:31:9)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at /Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/JI/Public/vscode/egg-example/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/JI/Public/vscode/egg-example/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+message: "invalid csrf token"
+pid: 26630
+hostname: localhost
+
+2018-11-10 18:06:53,758 WARN 26630 [-/127.0.0.1/-/0ms POST /user/loginAction] invalid csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2018-11-10 18:06:53,759 WARN 26630 [-/127.0.0.1/-/1ms POST /user/loginAction] nodejs.ForbiddenError: invalid csrf token
+    at Object.throw (/Users/JI/Public/vscode/egg-example/node_modules/koa/lib/context.js:96:11)
+    at Object.assertCsrf (/Users/JI/Public/vscode/egg-example/node_modules/egg-security/app/extend/context.js:157:17)
+    at csrf (/Users/JI/Public/vscode/egg-example/node_modules/egg-security/lib/middlewares/csrf.js:31:9)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at /Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/JI/Public/vscode/egg-example/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/JI/Public/vscode/egg-example/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+message: "invalid csrf token"
+pid: 26630
+hostname: localhost
+
+2018-11-10 18:07:24,117 WARN 26630 [-/127.0.0.1/-/0ms POST /user/loginAction] invalid csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2018-11-10 18:07:24,118 WARN 26630 [-/127.0.0.1/-/1ms POST /user/loginAction] nodejs.ForbiddenError: invalid csrf token
+    at Object.throw (/Users/JI/Public/vscode/egg-example/node_modules/koa/lib/context.js:96:11)
+    at Object.assertCsrf (/Users/JI/Public/vscode/egg-example/node_modules/egg-security/app/extend/context.js:157:17)
+    at csrf (/Users/JI/Public/vscode/egg-example/node_modules/egg-security/lib/middlewares/csrf.js:31:9)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at /Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/JI/Public/vscode/egg-example/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/JI/Public/vscode/egg-example/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+message: "invalid csrf token"
+pid: 26630
+hostname: localhost
+
+2018-11-10 18:08:36,472 WARN 26941 [-/127.0.0.1/-/2ms POST /user/loginAction] invalid csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2018-11-10 18:08:36,474 WARN 26941 [-/127.0.0.1/-/4ms POST /user/loginAction] nodejs.ForbiddenError: invalid csrf token
+    at Object.throw (/Users/JI/Public/vscode/egg-example/node_modules/koa/lib/context.js:96:11)
+    at Object.assertCsrf (/Users/JI/Public/vscode/egg-example/node_modules/egg-security/app/extend/context.js:157:17)
+    at csrf (/Users/JI/Public/vscode/egg-example/node_modules/egg-security/lib/middlewares/csrf.js:31:9)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at /Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/JI/Public/vscode/egg-example/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/JI/Public/vscode/egg-example/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+message: "invalid csrf token"
+pid: 26941
+hostname: localhost
+
+2018-11-10 18:08:37,603 WARN 26941 [-/127.0.0.1/-/1ms POST /user/loginAction] invalid csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2018-11-10 18:08:37,603 WARN 26941 [-/127.0.0.1/-/1ms POST /user/loginAction] nodejs.ForbiddenError: invalid csrf token
+    at Object.throw (/Users/JI/Public/vscode/egg-example/node_modules/koa/lib/context.js:96:11)
+    at Object.assertCsrf (/Users/JI/Public/vscode/egg-example/node_modules/egg-security/app/extend/context.js:157:17)
+    at csrf (/Users/JI/Public/vscode/egg-example/node_modules/egg-security/lib/middlewares/csrf.js:31:9)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at /Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/JI/Public/vscode/egg-example/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/JI/Public/vscode/egg-example/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+message: "invalid csrf token"
+pid: 26941
+hostname: localhost
+
+2018-11-10 18:08:58,026 WARN 26941 [-/127.0.0.1/-/0ms POST /user/loginAction] invalid csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2018-11-10 18:08:58,027 WARN 26941 [-/127.0.0.1/-/1ms POST /user/loginAction] nodejs.ForbiddenError: invalid csrf token
+    at Object.throw (/Users/JI/Public/vscode/egg-example/node_modules/koa/lib/context.js:96:11)
+    at Object.assertCsrf (/Users/JI/Public/vscode/egg-example/node_modules/egg-security/app/extend/context.js:157:17)
+    at csrf (/Users/JI/Public/vscode/egg-example/node_modules/egg-security/lib/middlewares/csrf.js:31:9)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at /Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/JI/Public/vscode/egg-example/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/JI/Public/vscode/egg-example/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+message: "invalid csrf token"
+pid: 26941
+hostname: localhost
+
+2018-11-10 18:08:59,339 WARN 26941 [-/127.0.0.1/-/0ms POST /user/loginAction] invalid csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2018-11-10 18:08:59,339 WARN 26941 [-/127.0.0.1/-/1ms POST /user/loginAction] nodejs.ForbiddenError: invalid csrf token
+    at Object.throw (/Users/JI/Public/vscode/egg-example/node_modules/koa/lib/context.js:96:11)
+    at Object.assertCsrf (/Users/JI/Public/vscode/egg-example/node_modules/egg-security/app/extend/context.js:157:17)
+    at csrf (/Users/JI/Public/vscode/egg-example/node_modules/egg-security/lib/middlewares/csrf.js:31:9)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at /Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/JI/Public/vscode/egg-example/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/JI/Public/vscode/egg-example/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+message: "invalid csrf token"
+pid: 26941
+hostname: localhost
+
+2018-11-10 18:12:12,778 WARN 27197 [-/127.0.0.1/-/4ms POST /user/loginAction] invalid csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2018-11-10 18:12:12,780 WARN 27197 [-/127.0.0.1/-/7ms POST /user/loginAction] nodejs.ForbiddenError: invalid csrf token
+    at Object.throw (/Users/JI/Public/vscode/egg-example/node_modules/koa/lib/context.js:96:11)
+    at Object.assertCsrf (/Users/JI/Public/vscode/egg-example/node_modules/egg-security/app/extend/context.js:157:17)
+    at csrf (/Users/JI/Public/vscode/egg-example/node_modules/egg-security/lib/middlewares/csrf.js:31:9)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at /Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:34:12
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at session (/Users/JI/Public/vscode/egg-example/node_modules/koa-session/index.js:41:13)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/Users/JI/Public/vscode/egg-example/node_modules/koa-override/index.js:38:12)
+    at dispatch (/Users/JI/Public/vscode/egg-example/node_modules/koa-compose/index.js:42:32)
+message: "invalid csrf token"
+pid: 27197
+hostname: localhost
+

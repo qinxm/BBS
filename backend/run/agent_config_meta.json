@@ -1,0 +1,299 @@
+{
+  "keys": "/Users/qinxm/Sites/BBS/egg-example/config/config.default.js",
+  "middleware": "/Users/qinxm/Sites/BBS/egg-example/config/config.default.js",
+  "mysql": {
+    "client": {
+      "host": "/Users/qinxm/Sites/BBS/egg-example/config/config.default.js",
+      "port": "/Users/qinxm/Sites/BBS/egg-example/config/config.default.js",
+      "user": "/Users/qinxm/Sites/BBS/egg-example/config/config.default.js",
+      "password": "/Users/qinxm/Sites/BBS/egg-example/config/config.default.js",
+      "database": "/Users/qinxm/Sites/BBS/egg-example/config/config.default.js"
+    },
+    "app": "/Users/qinxm/Sites/BBS/egg-example/config/config.default.js",
+    "agent": "/Users/qinxm/Sites/BBS/egg-example/config/config.default.js",
+    "default": {
+      "database": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-mysql/config/config.default.js",
+      "connectionLimit": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-mysql/config/config.default.js"
+    }
+  },
+  "security": {
+    "csrf": {
+      "enable": "/Users/qinxm/Sites/BBS/egg-example/config/config.default.js",
+      "ignoreJSON": "/Users/qinxm/Sites/BBS/egg-example/config/config.default.js",
+      "useSession": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-security/config/config.default.js",
+      "cookieName": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-security/config/config.default.js",
+      "sessionName": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-security/config/config.default.js",
+      "headerName": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-security/config/config.default.js",
+      "bodyName": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-security/config/config.default.js",
+      "queryName": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-security/config/config.default.js"
+    },
+    "domainWhiteList": "/Users/qinxm/Sites/BBS/egg-example/config/config.default.js",
+    "protocolWhiteList": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-security/config/config.default.js",
+    "defaultMiddleware": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-security/config/config.default.js",
+    "xframe": {
+      "enable": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-security/config/config.default.js"
+    },
+    "hsts": {
+      "enable": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-security/config/config.local.js",
+      "maxAge": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-security/config/config.default.js",
+      "includeSubdomains": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-security/config/config.default.js"
+    },
+    "dta": {
+      "enable": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-security/config/config.default.js"
+    },
+    "methodnoallow": {
+      "enable": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-security/config/config.default.js"
+    },
+    "noopen": {
+      "enable": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-security/config/config.default.js"
+    },
+    "nosniff": {
+      "enable": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-security/config/config.default.js"
+    },
+    "referrerPolicy": {
+      "enable": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-security/config/config.default.js"
+    },
+    "xssProtection": {
+      "enable": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-security/config/config.default.js"
+    },
+    "csp": {
+      "enable": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-security/config/config.default.js",
+      "policy": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-security/config/config.default.js"
+    },
+    "ssrf": {
+      "ipBlackList": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-security/config/config.default.js",
+      "checkAddress": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-security/config/config.default.js"
+    }
+  },
+  "cors": {
+    "allowMethods": "/Users/qinxm/Sites/BBS/egg-example/config/config.default.js"
+  },
+  "session": {
+    "maxAge": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-session/config/config.default.js",
+    "key": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-session/config/config.default.js",
+    "httpOnly": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-session/config/config.default.js",
+    "encrypt": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-session/config/config.default.js"
+  },
+  "helper": {
+    "shtml": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-security/config/config.default.js"
+  },
+  "jsonp": {
+    "limit": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-jsonp/config/config.default.js",
+    "callback": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-jsonp/config/config.default.js",
+    "csrf": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-jsonp/config/config.default.js"
+  },
+  "onerror": {
+    "errorPageUrl": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-onerror/config/config.default.js",
+    "appErrorFilter": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-onerror/config/config.default.js",
+    "templatePath": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-onerror/config/config.default.js"
+  },
+  "i18n": {
+    "defaultLocale": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-i18n/config/config.default.js",
+    "dirs": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-i18n/config/config.default.js",
+    "queryField": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-i18n/config/config.default.js",
+    "cookieField": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-i18n/config/config.default.js",
+    "cookieMaxAge": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-i18n/config/config.default.js"
+  },
+  "watcher": {
+    "type": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-watcher/config/config.local.js",
+    "eventSources": {
+      "default": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-watcher/config/config.default.js",
+      "development": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-watcher/config/config.default.js"
+    }
+  },
+  "customLogger": {
+    "scheduleLogger": {
+      "consoleLevel": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-schedule/config/config.default.js",
+      "file": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-schedule/config/config.default.js"
+    }
+  },
+  "multipart": {
+    "mode": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-multipart/config/config.default.js",
+    "autoFields": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-multipart/config/config.default.js",
+    "defaultCharset": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-multipart/config/config.default.js",
+    "fieldNameSize": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-multipart/config/config.default.js",
+    "fieldSize": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-multipart/config/config.default.js",
+    "fields": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-multipart/config/config.default.js",
+    "fileSize": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-multipart/config/config.default.js",
+    "files": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-multipart/config/config.default.js",
+    "fileExtensions": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-multipart/config/config.default.js",
+    "whitelist": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-multipart/config/config.default.js",
+    "tmpdir": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-multipart/config/config.default.js",
+    "cleanSchedule": {
+      "cron": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-multipart/config/config.default.js"
+    }
+  },
+  "development": {
+    "watchDirs": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-development/config/config.default.js",
+    "ignoreDirs": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-development/config/config.default.js",
+    "fastReady": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-development/config/config.default.js",
+    "reloadOnDebug": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-development/config/config.default.js",
+    "overrideDefault": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-development/config/config.default.js"
+  },
+  "logrotator": {
+    "filesRotateByHour": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-logrotator/config/config.default.js",
+    "hourDelimiter": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-logrotator/config/config.default.js",
+    "filesRotateBySize": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-logrotator/config/config.default.js",
+    "maxFileSize": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-logrotator/config/config.default.js",
+    "maxFiles": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-logrotator/config/config.default.js",
+    "rotateDuration": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-logrotator/config/config.default.js",
+    "maxDays": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-logrotator/config/config.default.js"
+  },
+  "static": {
+    "prefix": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-static/config/config.default.js",
+    "dir": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-static/config/config.default.js",
+    "dynamic": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-static/config/config.default.js",
+    "preload": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-static/config/config.default.js",
+    "buffer": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-static/config/config.default.js",
+    "maxFiles": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-static/config/config.default.js"
+  },
+  "view": {
+    "root": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-view/config/config.default.js",
+    "cache": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-view/config/config.local.js",
+    "defaultExtension": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-view/config/config.default.js",
+    "defaultViewEngine": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-view/config/config.default.js",
+    "mapping": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg-view/config/config.default.js"
+  },
+  "env": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+  "name": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+  "proxy": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+  "protocolHeaders": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+  "ipHeaders": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+  "hostHeaders": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+  "pkg": {
+    "name": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "version": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "description": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "private": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "dependencies": {
+      "egg": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "egg-cors": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "egg-mysql": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "egg-scripts": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js"
+    },
+    "devDependencies": {
+      "autod": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "autod-egg": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "egg-bin": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "egg-ci": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "egg-mock": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "eslint": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "eslint-config-egg": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "webstorm-disable-index": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js"
+    },
+    "engines": {
+      "node": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js"
+    },
+    "scripts": {
+      "start": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "stop": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "dev": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "debug": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "test": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "test-local": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "cov": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "lint": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "ci": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "autod": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js"
+    },
+    "ci": {
+      "version": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js"
+    },
+    "repository": {
+      "type": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "url": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js"
+    },
+    "author": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "license": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js"
+  },
+  "baseDir": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+  "HOME": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+  "rundir": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+  "dump": {
+    "ignore": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js"
+  },
+  "confusedConfigurations": {
+    "bodyparser": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "notFound": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "sitefile": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "middlewares": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "httpClient": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js"
+  },
+  "notfound": {
+    "pageUrl": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js"
+  },
+  "siteFile": {
+    "/favicon.ico": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js"
+  },
+  "bodyParser": {
+    "enable": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "encoding": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "formLimit": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "jsonLimit": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "strict": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "queryString": {
+      "arrayLimit": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "depth": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "parameterLimit": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js"
+    }
+  },
+  "logger": {
+    "dir": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "encoding": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "env": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "level": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "consoleLevel": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "disableConsoleAfterReady": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "outputJSON": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "buffer": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "appLogName": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "coreLogName": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "agentLogName": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "errorLogName": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "coreLogger": {
+      "consoleLevel": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.local.js"
+    },
+    "allowDebugAtProd": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js"
+  },
+  "httpclient": {
+    "enableDNSCache": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "dnsCacheLookupInterval": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "dnsCacheMaxLength": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "request": {
+      "timeout": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js"
+    },
+    "httpAgent": {
+      "keepAlive": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "freeSocketKeepAliveTimeout": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "maxSockets": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "maxFreeSockets": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js"
+    },
+    "httpsAgent": {
+      "keepAlive": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "freeSocketKeepAliveTimeout": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "maxSockets": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "maxFreeSockets": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js"
+    }
+  },
+  "meta": {
+    "enable": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "logging": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js"
+  },
+  "coreMiddleware": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+  "workerStartTimeout": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+  "cluster": {
+    "listen": {
+      "path": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "port": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+      "hostname": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js"
+    }
+  },
+  "clusterClient": {
+    "maxWaitTime": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js",
+    "responseTimeout": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js"
+  },
+  "onClientError": "/Users/qinxm/Sites/BBS/egg-example/node_modules/egg/config/config.default.js"
+}
