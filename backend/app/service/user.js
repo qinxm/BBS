@@ -8,14 +8,58 @@ class UserService extends Service {
   }
   async find(uid) {
     // 假如 我们拿到用户 id 从数据库获取用户详细信息
-    const user = await this.app.mysql.query('select * from pre_common_member where uid = ?', uid);
-    return user;
+    // const user = await this.app.mysql.query('select * from pre_common_member where uid = ?', uid);
+    // return user;
+    const user = await this.app.mysql.get('pre_common_member', { uid: 123 });
+    return { user };
   }
 
   //登录
-  async login(userName, password) {
-    const user = await this.app.mysql.query('select uid from pre_common_member where username=? && `password`=?', userName,password);
-    return user;
+  async login(username, password) {
+    // const user = await this.app.mysql.query(`select * from pre_common_member where username='${userName}' and password='${password}'`);
+    // return user && user[0];
+    const user = await this.app.mysql.select('pre_common_member', {
+      where: {
+        username,
+        password
+      }
+    })
+    return user && user[0];
+  }
+  //注册
+  async register(obj) {
+    const result = await this.app.mysql.insert('pre_common_member', {
+      email: obj.email,
+      username: obj.userName,
+      password: obj.password,
+      status: obj.status,
+      emailstatus: obj.emailStatus,
+      avatarstatus: obj.avatarStatus
+    })
+    return result 
+  }
+  //修改用户信息
+  async updateUser(obj) {
+    const result = await this.app.mysql.update('pre_common_member', {
+      email: obj.email,
+      username: obj.userName,
+      password: obj.password,
+      status: obj.status,
+      emailstatus: obj.emailStatus,
+      avatarstatus: obj.avatarStatus
+    },{
+      where: {
+        uid: 133
+      }
+    })
+    return result 
+  }
+  //删除用户信息
+  async deleteUser(obj) {
+    const result = await this.app.mysql.delete('pre_common_member', {
+      uid: obj.uid
+    })
+    return result 
   }
 
 }
