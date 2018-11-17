@@ -9,3 +9,13 @@
 2018-11-16 16:24:40,136 INFO 94791 [egg-watcher] Start watching: "/Users/qinxm/Sites/BBS/egg-example/app.js"
 2018-11-16 16:24:40,136 INFO 94791 [egg-watcher:agent] watcher start success
 2018-11-16 16:24:40,160 INFO 94791 [egg:core] dump config after ready, 3ms
+2018-11-17 22:27:26,952 INFO 25056 [egg:logger] init all loggers with options: {"dir":"/Users/qinxm/Sites/BBS/github/BBS/backend/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2018-11-17 22:27:27,065 INFO 25056 [egg:core] dump config after load, 5ms
+2018-11-17 22:27:27,123 INFO 25056 [egg-watcher] Start watching: ["/Users/qinxm/Sites/BBS/github/BBS/backend/app","/Users/qinxm/Sites/BBS/github/BBS/backend/config","/Users/qinxm/Sites/BBS/github/BBS/backend/mocks","/Users/qinxm/Sites/BBS/github/BBS/backend/mocks_proxy","/Users/qinxm/Sites/BBS/github/BBS/backend/app.js"]
+2018-11-17 22:27:27,123 INFO 25056 [egg-watcher] Start watching: "/Users/qinxm/Sites/BBS/github/BBS/backend/app"
+2018-11-17 22:27:27,123 INFO 25056 [egg-watcher] Start watching: "/Users/qinxm/Sites/BBS/github/BBS/backend/config"
+2018-11-17 22:27:27,123 INFO 25056 [egg-watcher] Start watching: "/Users/qinxm/Sites/BBS/github/BBS/backend/mocks"
+2018-11-17 22:27:27,124 INFO 25056 [egg-watcher] Start watching: "/Users/qinxm/Sites/BBS/github/BBS/backend/mocks_proxy"
+2018-11-17 22:27:27,124 INFO 25056 [egg-watcher] Start watching: "/Users/qinxm/Sites/BBS/github/BBS/backend/app.js"
+2018-11-17 22:27:27,124 INFO 25056 [egg-watcher:agent] watcher start success
+2018-11-17 22:27:27,150 INFO 25056 [egg:core] dump config after ready, 9ms

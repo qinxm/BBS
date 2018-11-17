@@ -28,8 +28,7 @@
   {
     "name": null,
     "methods": [
-      "HEAD",
-      "GET"
+      "POST"
     ],
     "paramNames": [
       {
@@ -55,8 +54,44 @@
       "POST"
     ],
     "paramNames": [],
-    "path": "/user/loginAction",
-    "regexp": "/^\\/user\\/loginAction(?:\\/(?=$))?$/",
+    "path": "/api/users/login",
+    "regexp": "/^\\/api\\/users\\/login(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/user/register",
+    "regexp": "/^\\/user\\/register(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/user/update",
+    "regexp": "/^\\/user\\/update(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/user/delete",
+    "regexp": "/^\\/user\\/delete(?:\\/(?=$))?$/",
     "stack": [
       "wrappedController"
     ]

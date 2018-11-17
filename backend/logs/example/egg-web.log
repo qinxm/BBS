@@ -73,3 +73,21 @@
 2018-11-16 16:24:41,017 INFO 94792 [egg-watcher:application] watcher start success
 2018-11-16 16:24:41,447 INFO 94792 [egg-mysql] instance[0] status OK, rds currentTime: Fri Nov 16 2018 16:24:41 GMT+0800 (CST)
 2018-11-16 16:24:41,455 INFO 94792 [egg:core] dump config after ready, 4ms
+2018-11-17 22:27:29,423 INFO 25060 [egg:logger] init all loggers with options: {"dir":"/Users/qinxm/Sites/BBS/github/BBS/backend/logs/example","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"example-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2018-11-17 22:27:29,476 INFO 25060 [egg-schedule]: register schedule /Users/qinxm/Sites/BBS/github/BBS/backend/node_modules/_egg-logrotator@3.0.4@egg-logrotator/app/schedule/clean_log.js
+2018-11-17 22:27:29,477 INFO 25060 [egg-schedule]: register schedule /Users/qinxm/Sites/BBS/github/BBS/backend/node_modules/_egg-logrotator@3.0.4@egg-logrotator/app/schedule/rotate_by_file.js
+2018-11-17 22:27:29,477 INFO 25060 [egg-multipart] stream mode enable
+2018-11-17 22:27:29,478 INFO 25060 [egg-mysql] connecting bbs@106.12.13.62:3306/bbs
+2018-11-17 22:27:29,680 INFO 25060 [egg-static] starting static serve /public/ -> /Users/qinxm/Sites/BBS/github/BBS/backend/app/public
+2018-11-17 22:27:29,683 INFO 25060 [egg-security] use methodnoallow middleware
+2018-11-17 22:27:29,683 INFO 25060 [egg-security] use noopen middleware
+2018-11-17 22:27:29,684 INFO 25060 [egg-security] use nosniff middleware
+2018-11-17 22:27:29,685 INFO 25060 [egg-security] use xssProtection middleware
+2018-11-17 22:27:29,686 INFO 25060 [egg-security] use xframe middleware
+2018-11-17 22:27:29,686 INFO 25060 [egg-security] use dta middleware
+2018-11-17 22:27:29,687 INFO 25060 [egg-security] compose 6 middlewares into one security middleware
+2018-11-17 22:27:29,700 INFO 25060 [egg:core] dump config after load, 7ms
+2018-11-17 22:27:29,745 INFO 25060 [egg-watcher:application] watcher start success
+2018-11-17 22:27:29,868 INFO 25060 [egg-mysql] instance[0] status OK, rds currentTime: Sat Nov 17 2018 22:27:29 GMT+0800 (CST)
+2018-11-17 22:27:29,876 INFO 25060 [egg:core] dump config after ready, 5ms
+2018-11-17 22:27:41,882 WARN 25060 [http_server] A request `POST /user/register` timeout with client (::ffff:127.0.0.1:62093)
