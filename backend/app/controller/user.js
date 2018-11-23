@@ -14,21 +14,26 @@ class UserController extends Controller {
   }
 
   async loginAction() {
-    const userName = this.ctx.request.body.userName;
+    const userName = this.ctx.request.body.username;
     const password = this.ctx.request.body.password;
     let remember = this.ctx.request.body.remember;
     const user = await this.ctx.service.user.login(userName, password);
     // this.ctx.body = userInfo;
 
-    if (user.uid) {
+    if (user && user.id) {
       this.ctx.session.user = user;
       if (remember) {
         this.ctx.session.maxAge = 3 * 24 * 3600 * 1000;
       }
-      this.ctx.body = user
+      this.ctx.body = {
+        code: 200,
+        message: '登录成功',
+        result: user
+      }
     } else {
       const errObj = {
-        msg: '账号或者密码错误!',
+        code: 501,
+        message: '账号或者密码错误!',
       };
       await this.ctx.render('error', errObj);
     }
