@@ -14,16 +14,16 @@ module.exports = appInfo => {
     // 单数据库信息配置
     client: {
       // host
-      // host: '106.12.13.62',
-      host: '127.0.0.1',
+      host: '106.12.13.62',
+      // host: '127.0.0.1',
       // 端口号
       port: '3306',
       // 用户名
-      // user: 'bbs',
-      user: 'root',
+      user: 'bbs',
+      // user: 'root',
       // 密码
-      // password: 'zXfNGc3G5kXepXcj',
-      password: 'password',
+      password: 'zXfNGc3G5kXepXcj',
+      // password: 'password',
       // 数据库名
       database: 'bbs',
     },
