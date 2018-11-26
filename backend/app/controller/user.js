@@ -20,7 +20,7 @@ class UserController extends Controller {
     const user = await this.ctx.service.user.login(userName, password);
     // this.ctx.body = userInfo;
 
-    if (user && user.id) {
+    if (user && user.uid) {
       this.ctx.session.user = user;
       if (remember) {
         this.ctx.session.maxAge = 3 * 24 * 3600 * 1000;

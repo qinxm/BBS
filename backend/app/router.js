@@ -18,6 +18,7 @@ module.exports = app => {
   router.post('/user/delete', controller.user.deleteAction);
 
   router.post('/api/post/create', controller.post.createAction)
-  router.post('/api/post/getlist', controller.post.getListAction)
+  router.post('/api/post/getList', controller.post.getListAction)
+  router.post('/api/post/getInfo', controller.post.getInfoAction)
   //router.get('/user/loginAction', controller.user.loginAction);
 };

@@ -37,7 +37,24 @@ class PostController extends Controller {
         result:  e
       }
     }
-    
   }
+  async getInfoAction() {
+    const obj = this.ctx.request.body
+    try {
+      const result = await this.ctx.service.post.getInfo(obj);
+      this.ctx.body = {
+        code: 200,
+        message: '操作成功',
+        result:  result
+      }
+    } catch(e) {
+      this.ctx.body = {
+        code: 501,
+        message: '操作异常',
+        result:  e
+      }
+    }
+  }
+
 }
 module.exports = PostController;
