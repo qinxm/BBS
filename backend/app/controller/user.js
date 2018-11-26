@@ -21,7 +21,9 @@ class UserController extends Controller {
     // this.ctx.body = userInfo;
 
     if (user && user.uid) {
+      let token = this.ctx.service.user.createToken({ id: user.uid });
       this.ctx.session.user = user;
+      user.token= 'Bearer ' +token
       if (remember) {
         this.ctx.session.maxAge = 3 * 24 * 3600 * 1000;
       }

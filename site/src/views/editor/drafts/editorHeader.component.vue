@@ -120,7 +120,6 @@ export default {
     },
 
     async publishArticle() {
-      debugger
       let model = {
         "title": this.title,
         "author": "test",

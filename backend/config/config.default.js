@@ -52,3 +52,7 @@ module.exports = appInfo => {
 
   return config;
 };
+module.exports.jwt = {
+  enable: false,
+  secret: "123456"
+};

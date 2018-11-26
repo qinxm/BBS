@@ -3,6 +3,8 @@ import iView from 'iview'
 import cookies from "./cookie";
 import lodash from 'lodash'
 import httpCodeMap from './httpCodeMap'
+import router from '../routers'
+import NProgress from 'nprogress'
 let _this = iView;
 
 // 基础配置
@@ -55,6 +57,7 @@ const fetch = (options) => {
             if (response.status === 200) {
                 return Promise.resolve(response);
             } else {
+                console.log('401')
                 return Promise.reject(response);
             }
         },
@@ -64,7 +67,8 @@ const fetch = (options) => {
             if (error.response && error.response.status) {
                 // 异常状态处理 
                 // 错误信息提示
-                _this.Message.error(httpCodeMap[error.response.status])
+                // router.push({name: 'login'})
+                // _this.Message.error(httpCodeMap[error.response.status])
                 return Promise.reject(error);
             }
         }
@@ -153,7 +157,15 @@ export default function request(options) {
         // loading结束
         options.loading && _this.Spin.hide();
         // 错误信息提示
-        _this.Message.error(msg)
+        if (statusCode == 401) {
+            _this.Message.error('您未登录，即将跳转登录页面')
+            NProgress.start();
+            window.setTimeout(() => {
+                router.push({name: 'login'})
+            }, 1000)
+        } else {
+            _this.Message.error(msg)
+        }
         // 抛出错误信息
         return Promise.reject({ success: false, statusCode, message: msg, url: config.url })
     })

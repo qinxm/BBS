@@ -72,7 +72,9 @@ export default {
   },
   methods: {
     ...mapMutations('users', {
-      setNickName: 'setNickName' // 将 `this.setNickName()` 映射为 `this.$store.commit('increment')`
+      setNickName: 'setNickName', // 将 `this.setNickName()` 映射为 `this.$store.commit('increment')`
+      setUserToken: 'setUserToken',
+      setUserId: 'setUserId'
     }),
     // setCookie,
     async handleSubmit() {
@@ -85,6 +87,8 @@ export default {
       // })
       
       this.setNickName(`${res.result.username}`)
+      this.setUserId(`${res.result.uid}`)
+      this.setUserToken(`${res.result.token}`)
       this.$emit('close')
     },
     close() {

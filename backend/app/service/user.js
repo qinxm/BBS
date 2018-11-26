@@ -6,6 +6,34 @@ class UserService extends Service {
     // 就可以直接通过 this.ctx 获取 ctx 了
     // 还可以直接通过 this.app 获取 app 了
   }
+
+  createToken(data) {
+    return this.app.jwt.sign(data, this.app.config.jwt.secret, {
+      expiresIn: "12h"
+    });
+  }
+  verifyToken(token) {
+    return new Promise((resolve, reject) => {
+      this.app.jwt.verify(token, this.app.config.jwt.secret, function(err, decoded) {
+        let result = {};
+        if (err) {
+          /*
+            err = {
+              name: 'TokenExpiredError',
+              message: 'jwt expired',
+              expiredAt: 1408621000
+            }
+          */
+          result.verify = false;
+          result.message = err.message;
+        } else {
+          result.verify = true;
+          result.message = decoded;
+        }
+        resolve(result);
+      });
+    });
+  }
   async find(uid) {
     // 假如 我们拿到用户 id 从数据库获取用户详细信息
     // const user = await this.app.mysql.query('select * from pre_common_member where uid = ?', uid);

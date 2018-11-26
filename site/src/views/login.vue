@@ -24,6 +24,7 @@
   </section>
 </template>
 <script>
+import { mapMutations } from "vuex";
 import services from '@/config/services'
 export default {
   name: 'Login',
@@ -40,12 +41,20 @@ export default {
     }
   },
   methods: {
+    ...mapMutations('users', {
+      setNickName: 'setNickName', // 将 `this.setNickName()` 映射为 `this.$store.commit('increment')`
+      setUserToken: 'setUserToken',
+      setUserId: 'setUserId'
+    }),
     async handleSubmit() {
       let res = await services.login(this.loginModel)
-      this.loginResponse = res.message
-
+      // this.loginResponse = res.message
+      if (!this.$error(res)) return
+      this.setNickName(`${res.result.username}`)
+      this.setUserId(`${res.result.uid}`)
+      this.setUserToken(`${res.result.token}`)
       this.$router.push({
-        name: 'Home'
+        name: 'home'
       })
     }
   }
