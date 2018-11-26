@@ -154,6 +154,7 @@ export default {
     }
     &.auth {
       color: #007fff;
+      font-size: 14px;
       .login {
         &::after {
           content: "\B7";

@@ -1,22 +1,30 @@
 <template>
   <section>
     
-    <editor-header :content="content"></editor-header>
+    <editor-header :content="postContent" :title="postTitle"></editor-header>
     <div class="main-content">
-      <vue-editor v-model="content" :editorToolbar="customToolbar"></vue-editor>
+      <Row>
+        <Input v-model="postTitle" placeholder="输入标题" style="width: 100%" />
+      </Row>
+      <Row class="mgt10">
+        <vue-editor v-model="postContent" :editorToolbar="customToolbar" style="height:400px;"></vue-editor>
+      </Row>
     </div>
   </section>
 </template>
 <script>
+import EditorHeader from './editorHeader.component.vue'
 import { VueEditor } from 'vue2-editor'
 export default {
   name: 'newDrafts',
   components: {
-      VueEditor
+    VueEditor,
+    EditorHeader
   },
   data() {
     return {
-      content: '<h1>Some initial content</h1>',
+      postTitle: '',
+      postContent: '',
       customToolbar: [
         ['bold', 'italic', 'underline'],
         [{ 'list': 'ordered'}, { 'list': 'bullet' }],
@@ -40,5 +48,7 @@ export default {
   border-bottom: 1px solid #f7f7f7;
   user-select: none;
   z-index: 50;
+  padding: 10px;
+  height: 100%;
 }
 </style>

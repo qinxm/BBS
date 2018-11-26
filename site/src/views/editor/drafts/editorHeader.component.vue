@@ -38,6 +38,7 @@
   </header>
 </template>
 <script>
+
 import { mapGetters, mapMutations } from "vuex";
 import utils from '@/utils/cookie.js'
 import services from '@/config/services'
@@ -45,7 +46,7 @@ import LoginModal from '@/components/login.component.vue'
 export default {
   name: 'pageHeader',
   components: {
-    LoginModal
+    LoginModal,
   },
   props: {
     content: String,
@@ -74,16 +75,12 @@ export default {
   computed: {
     ...mapGetters('users', {
       _nickName: 'getNickName',
-      _userName: 'getUserName'
     }),
     nickName() {
-      return this._nickName || utils.getCookie('nickName')
-    },
-    userName() {
-      return this._userName || utils.getCookie('userName')
+      return this._nickName || utils.getCookie('nick_name')
     },
     isLogin() {
-      return !!this.userName || !!utils.getCookie('userName')
+      return !!this.nickName || !!utils.getCookie('nick_name')
     },
     categoryId() {
       if(this.categoryList.length) {
@@ -105,8 +102,7 @@ export default {
       })
     },
     ...mapMutations('users', {
-      setNickName: 'setNickName', // 将 `this.setNickName()` 映射为 `this.$store.commit('increment')`
-      setUserName: 'setUserName' // 将 `this.setNickName()` 映射为 `this.$store.commit('increment')`
+      setNickName: 'setNickName' // 将 `this.setNickName()` 映射为 `this.$store.commit('increment')`
     }),
     showLogin() {
       this.showLoginModal = true
@@ -127,17 +123,15 @@ export default {
       debugger
       let model = {
         "title": this.title,
-        "author": this.userName,
+        "author": "test",
         "authorid": 1,
         "tags": this.tags,
         "subject": this.categoryId,
-        "message": this.content
-      }
+        "message": this.content}
       let res = await services.createPost(model)
       if (res.code == 200) {
         this.$Message.success('发布成功')
         this.publishPopvisible = false
-        this.$router.replace({name: 'home'})
       }
       
     }

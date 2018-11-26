@@ -3,12 +3,14 @@ import utils from '@/utils/cookie.js'
 const state = () => { 
   return {
     nickName: '',
+    userName: ''
   }
 }
 
 // getters
 const getters = {
   getNickName: state => state.nickName,
+  getUserName: state => state.userName,
 }
 
 
@@ -22,9 +24,14 @@ const mutations = {
   async setNickName(state, data) {
     state.nickName = data
     utils.setCookie({
-      nick_name: data
+      nickName: data
     })
-    
+  },
+  async setUserName(state, data) {
+    state.userName = data
+    utils.setCookie({
+      userName: data
+    })
   },
 }
 

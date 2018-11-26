@@ -45,8 +45,8 @@ export default {
     return {
       _show: false,
       loginModel: {
-        username: 'qinxm',
-        password: '123456'
+        username: 'test',
+        password: 'test'
       },
       formRule: {}
     }
@@ -56,8 +56,11 @@ export default {
       get () {
         return this._show
       },
-      set () {
+      set (val) {
         this._show = false
+        if(!val) {
+          this.$emit('close')
+        }
       }
     },
     ...mapGetters('users', {
@@ -75,13 +78,13 @@ export default {
     async handleSubmit() {
       let res = await services.login(this.loginModel)
       if(!this.$error(res)) return
-      console.log(res.result)
-      let access_token = res.result.access_token
-      utils.setCookie({
-        access_token: `${"Bearer"} ${access_token}`,
-      })
+      // console.log(res.result)
+      // let access_token = res.result.access_token
+      // utils.setCookie({
+      //   access_token: `${"Bearer"} ${access_token}`,
+      // })
       
-      this.setNickName(`${res.result.nick_name}`)
+      this.setNickName(`${res.result.username}`)
       this.$emit('close')
     },
     close() {

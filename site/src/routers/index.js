@@ -4,6 +4,7 @@ import Router from "vue-router"
 import Login from '../views/login.vue'
 import Index from '../views/index.vue'
 import Home from '../views/home.vue'
+import PostDetail from '../views/post/detail.vue'
 import NewDrafts from '../views/editor/drafts/create.component.vue'
 import CategoryCreate from '../views/category/create.component.vue'
 import CategoryList from '../views/category/list.component.vue'
@@ -15,8 +16,13 @@ const routes = [{
   component: Index,
   children: [{
     path: '/home',
+    name: 'home',
     component: Home,
   }, {
+    path: '/post/:id',
+    name: 'postDetail',
+    component: PostDetail
+  },{
     path: '/category/list',
     name: 'categoryList',
     component: CategoryList,

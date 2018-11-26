@@ -4,7 +4,7 @@
       <h3 class="title">登录</h3>
       <Form ref="formLogin" :model="loginModel" :rules="formRule">
         <FormItem prop="username">
-            <Input type="text" v-model="loginModel.username" placeholder="Username">
+            <Input type="text" v-model="loginModel.username" placeholder="username">
                 <Icon type="ios-person-outline" slot="prepend"></Icon>
             </Input>
         </FormItem>
@@ -24,7 +24,7 @@
   </section>
 </template>
 <script>
-import {login} from '@/config/services'
+import services from '@/config/services'
 export default {
   name: 'Login',
   data() {
@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     async handleSubmit() {
-      let res = await login(this.loginModel)
+      let res = await services.login(this.loginModel)
       this.loginResponse = res.message
 
       this.$router.push({
