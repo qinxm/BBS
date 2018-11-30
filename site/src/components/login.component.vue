@@ -74,19 +74,15 @@ export default {
     ...mapMutations('users', {
       setNickName: 'setNickName', // 将 `this.setNickName()` 映射为 `this.$store.commit('increment')`
       setUserToken: 'setUserToken',
-      setUserId: 'setUserId'
+      setUserId: 'setUserId',
+      setUserName: 'setUserName'
     }),
     // setCookie,
     async handleSubmit() {
       let res = await services.login(this.loginModel)
       if(!this.$error(res)) return
-      // console.log(res.result)
-      // let access_token = res.result.access_token
-      // utils.setCookie({
-      //   access_token: `${"Bearer"} ${access_token}`,
-      // })
-      
-      this.setNickName(`${res.result.username}`)
+      this.setNickName(`${res.result.nickname}`)
+      this.setUserName(`${res.result.username}`)
       this.setUserId(`${res.result.uid}`)
       this.setUserToken(`${res.result.token}`)
       this.$emit('close')

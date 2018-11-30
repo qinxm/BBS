@@ -100,7 +100,7 @@ export default {
     // 详情页
     toDetail(row, id) {
       this.$router.push({
-        name: 'inStoragePlanDetail',
+        name: 'InStoragePlanDetail',
         params: {
           id,
           fromName: this.$route.name

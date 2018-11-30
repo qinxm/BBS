@@ -5,5 +5,6 @@ export default {
   'getPostInfo': '/api/post/getInfo',
   'getCategoryList': '/api/category/list',
   'createCategory': '/api/category/create',
-  
+  'searchPostList': '/api/post/search',
+  'addLike': '/api/post/addlike'
 }

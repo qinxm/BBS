@@ -44,17 +44,19 @@ export default {
     ...mapMutations('users', {
       setNickName: 'setNickName', // 将 `this.setNickName()` 映射为 `this.$store.commit('increment')`
       setUserToken: 'setUserToken',
+      setUserName: 'setUserName',
       setUserId: 'setUserId'
     }),
     async handleSubmit() {
       let res = await services.login(this.loginModel)
       // this.loginResponse = res.message
       if (!this.$error(res)) return
-      this.setNickName(`${res.result.username}`)
+      this.setNickName(`${res.result.nickname}`)
+      this.setUserName(`${res.result.username}`)
       this.setUserId(`${res.result.uid}`)
       this.setUserToken(`${res.result.token}`)
       this.$router.push({
-        name: 'home'
+        name: 'Home'
       })
     }
   }

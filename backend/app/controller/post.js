@@ -4,15 +4,7 @@ const Controller = require("egg").Controller;
 class PostController extends Controller {
   async createAction() {
     const obj = this.ctx.request.body
-    let cookieObj = this.ctx.helper.getCookieObject(this.ctx)
-    let isVerify = await this.ctx.helper.verifyToken(this.ctx, cookieObj.userId);
-    if (!isVerify) {
-      this.ctx.status = 401;
-      this.ctx.body = {
-        message: 'token失效'
-      }
-      return
-    }
+    
     const result = await this.ctx.service.post.create(obj);
     if (result.affectedRows === 1) {
       this.ctx.body = {
@@ -64,6 +56,40 @@ class PostController extends Controller {
       }
     }
   }
-
+  // params: {query:'', page: 1}
+  async searchAction() {
+    const obj = this.ctx.request.body
+    try {
+      const result = await this.ctx.service.post.search(obj);
+      this.ctx.body = {
+        code: 200,
+        message: '操作成功',
+        result:  result
+      }
+    } catch(e) {
+      this.ctx.body = {
+        code: 501,
+        message: '操作异常',
+        result:  e
+      }
+    }
+  }
+  async addLikeAction() {
+    const obj = this.ctx.request.body
+    try {
+      const result = await this.ctx.service.post.addLike(obj);
+      this.ctx.body = {
+        code: 200,
+        message: '操作成功',
+        result:  result
+      }
+    } catch(e) {
+      this.ctx.body = {
+        code: 501,
+        message: '操作异常',
+        result:  e
+      }
+    }
+  }
 }
 module.exports = PostController;

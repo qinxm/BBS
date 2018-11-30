@@ -17,8 +17,11 @@ module.exports = app => {
   router.post('/user/update', controller.user.updateAction);
   router.post('/user/delete', controller.user.deleteAction);
 
-  router.post('/api/post/create',  controller.post.createAction)
-  router.post('/api/post/getList', verify, controller.post.getListAction)
+  router.post('/api/post/create',  verify,  controller.post.createAction)
+  router.post('/api/post/getList', controller.post.getListAction)
   router.post('/api/post/getInfo', controller.post.getInfoAction)
+  router.post('/api/post/search', controller.post.searchAction)
+  router.post('/api/post/addlike', controller.post.addLikeAction)
+
   //router.get('/user/loginAction', controller.user.loginAction);
 };

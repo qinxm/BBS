@@ -17,6 +17,7 @@ function setCookie(cookies) {
     let cookie = ''
     for (const key in cookies) {
         if (cookies.hasOwnProperty(key)) {
+            debugger
             if (key == 'expires') {
                 if (cookies[key] > 0) {
                     cookie += `${key}=${exdate.setDate(exdate.getDate() + cookies[key]).toGMTString()};`

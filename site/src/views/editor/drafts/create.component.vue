@@ -1,7 +1,7 @@
 <template>
   <section>
     
-    <editor-header :content="postContent" :title="postTitle"></editor-header>
+    <editor-header :content="postContent" :title="postTitle" :clearContent="doClear"></editor-header>
     <div class="main-content">
       <Row>
         <Input v-model="postTitle" placeholder="输入标题" style="width: 100%" />
@@ -16,7 +16,7 @@
 import EditorHeader from './editorHeader.component.vue'
 import { VueEditor } from 'vue2-editor'
 export default {
-  name: 'newDrafts',
+  name: 'NewDrafts',
   components: {
     VueEditor,
     EditorHeader
@@ -30,6 +30,12 @@ export default {
         [{ 'list': 'ordered'}, { 'list': 'bullet' }],
         ['image', 'code-block']
       ]
+    }
+  },
+  methods: {
+    doClear() {
+      this.postTitle = ''
+      this.postContent = ''
     }
   }
 }

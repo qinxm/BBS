@@ -32,7 +32,7 @@ function routerHook(router) {
     if (!to.matched.length) {
       //如果未匹配到路由 登录页 默认登录页、其它 错误页
       next({
-        path: from.name === 'login' ? '/login' : '/error',
+        path: from.name === 'Login' ? '/login' : '/error',
         replace: true
       })
       // from.name ? next({ name: from.name }) : next('/');   //如果上级也未匹配到路由则跳转登录页面，如果上级能匹配到则转上级路由

@@ -6,6 +6,8 @@ import 'nprogress/nprogress.css'
 import Login from '../views/login.vue'
 import Index from '../views/index.vue'
 import Home from '../views/home.vue'
+import Test from '../views/test.vue'
+import Search from '../views/post/search.vue'
 import PostDetail from '../views/post/detail.vue'
 import NewDrafts from '../views/editor/drafts/create.component.vue'
 import CategoryCreate from '../views/category/create.component.vue'
@@ -21,29 +23,37 @@ const routes = [{
   component: Index,
   children: [{
     path: '/home',
-    name: 'home',
+    name: 'Home',
     component: Home,
+  },{
+    path: '/test',
+    name: 'Test',
+    component: Test,
+  },{
+    path: '/search',
+    name: 'Search',
+    component: Search,
   }, {
     path: '/post/:id',
-    name: 'postDetail',
+    name: 'PostDetail',
     component: PostDetail
   },{
     path: '/category/list',
-    name: 'categoryList',
+    name: 'CategoryList',
     component: CategoryList,
   },{
     path: '/category/create',
-    name: 'categoryCreate',
+    name: 'CategoryCreate',
     component: CategoryCreate,
   },
   ]
 },{
   path: '/login',
-  name: 'login',
+  name: 'Login',
   component: Login
 }, {
   path: '/editor/drafts/new',
-  name: 'newDrafts',
+  name: 'NewDrafts',
   component: NewDrafts
 }, ]
 const router = new Router({

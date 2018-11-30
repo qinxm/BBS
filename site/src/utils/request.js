@@ -161,7 +161,7 @@ export default function request(options) {
             _this.Message.error('您未登录，即将跳转登录页面')
             NProgress.start();
             window.setTimeout(() => {
-                router.push({name: 'login'})
+                router.push({name: 'Login'})
             }, 1000)
         } else {
             _this.Message.error(msg)

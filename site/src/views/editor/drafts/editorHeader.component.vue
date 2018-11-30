@@ -8,13 +8,13 @@
         <ul class="nav-list">
           <li class="main-nav-list"></li>
           <Poptip v-model="publishPopvisible" placement="bottom" width="400" class="publish-poptip">
-              <Button>发布</Button>
+              <Button type="primary" >发布</Button>
               <div class="panel" slot="content">
                 <div class="title">发布文章</div>
                 <div class="category-box">
                   <div class="sub-title">选择分类</div>
                   <div class="category-list">
-                    <div v-for="(item,index) in categoryList" :key="item.id" class="item" :class="item.active? 'active': ''"
+                    <div v-for="(item) in categoryList" :key="item.id" class="item" :class="item.active? 'active': ''"
                       @click="selectCategory(item)"
                     >{{item.name}} </div>
                   </div>
@@ -44,13 +44,14 @@ import utils from '@/utils/cookie.js'
 import services from '@/config/services'
 import LoginModal from '@/components/login.component.vue'
 export default {
-  name: 'pageHeader',
+  name: 'PageHeader',
   components: {
     LoginModal,
   },
   props: {
     content: String,
-    title: String
+    title: String,
+    clearContent: Function
   },
   data () {
     return {
@@ -74,13 +75,12 @@ export default {
   },
   computed: {
     ...mapGetters('users', {
-      _nickName: 'getNickName',
+      nickName: 'getNickName',
+      userName: 'getUserName',
+      userId: 'getUserId'
     }),
-    nickName() {
-      return this._nickName || utils.getCookie('nick_name')
-    },
     isLogin() {
-      return !!this.nickName || !!utils.getCookie('nick_name')
+      return !!this.nickName
     },
     categoryId() {
       if(this.categoryList.length) {
@@ -92,6 +92,14 @@ export default {
     }
   },
   methods: {
+    initPage () {
+      this.publishPopvisible = false
+      this.tags = ''
+      this.categoryList.map(item => {
+        item.active = false
+      })
+      this.clearContent()
+    },
     selectCategory(selected) {
       this.categoryList.map(item => {
         if (item.id == selected.id) {
@@ -101,38 +109,36 @@ export default {
         }
       })
     },
-    ...mapMutations('users', {
-      setNickName: 'setNickName' // 将 `this.setNickName()` 映射为 `this.$store.commit('increment')`
-    }),
-    showLogin() {
-      this.showLoginModal = true
-    },
-    closeLoginModal() {
-      this.showLoginModal = false
-    },
-    logout() {
-      this.setNickName('')
-      this.$cookies.remove('access_token')
-      this.$cookies.remove('nick_name')
-    },
-    activeTag() {
-      console.log('111')
-    },
-
     async publishArticle() {
+      if (!this.title) {
+        this.$Notice.error({
+          title: '标题不能为空'
+        });
+        return 
+      }
+      if (!this.content) {
+        this.$Notice.error({
+          title: '内容不能为空'
+        });
+        return 
+      }
       let model = {
         "title": this.title,
-        "author": "test",
-        "authorid": 1,
+        "author": this.userName,
+        "authorid": this.userId,
         "tags": this.tags,
         "subject": this.categoryId,
         "message": this.content}
       let res = await services.createPost(model)
       if (res.code == 200) {
         this.$Message.success('发布成功')
-        this.publishPopvisible = false
+        this.initPage()
       }
       
+    },
+    showPublishPop() {
+      alert('ss')
+      return false
     }
   }
 }

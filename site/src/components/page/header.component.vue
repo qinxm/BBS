@@ -1,8 +1,8 @@
 <template>
   <header class="main-header">
     <div class="container">
-      <a class="logo">
-        <img data-v-5ce25e66="" src="https://b-gold-cdn.xitu.io/v3/static/img/logo.a7995ad.svg" alt="掘金" class="logo-img">
+      <a class="logo" href="/">
+        <img src="https://b-gold-cdn.xitu.io/v3/static/img/logo.a7995ad.svg" alt="掘金" class="logo-img">
       </a>
       <nav role="navigation" class="main-nav">
         <ul class="nav-list">
@@ -17,8 +17,8 @@
             </Menu>
           </li>
           <li class="nav-item search">
-            <Input placeholder="Enter text" style="width: auto">
-              <Icon type="ios-search" slot="suffix" />
+            <Input placeholder="搜索" search v-model="searchTxt" style="width: auto" 
+            @on-search="doSearch">
             </Input>
           </li>
           <li class="nav-item submit">
@@ -31,7 +31,7 @@
           <li class="nav-item logout " v-else>
             <Icon type="ios-text" />
             <span class="nickname">{{nickName}}</span>
-            <Button type="primary" @click="logout">退出</Button>
+            <Button type="primary" @click="logout">登出</Button>
           </li>
         </ul>
       </nav>
@@ -48,12 +48,14 @@ import { login } from '@/config/services'
 import LoginModal from '@/components/login.component.vue'
 export default {
   name: 'pageHeader',
+  inject: ['reload'],
   components: {
     LoginModal
   },
   data () {
     return {
-      showLoginModal: false
+      showLoginModal: false,
+      searchTxt: ''
     }
   },
   computed: {
@@ -61,15 +63,15 @@ export default {
       _nickName: 'getNickName',
     }),
     nickName() {
-      return this._nickName || utils.getCookie('nick_name')
+      return this._nickName
     },
     isLogin() {
-      return !!this.nickName || !!utils.getCookie('nick_name')
+      return !!this.nickName || !!utils.getCookie('nickName')
     }
   },
   methods: {
     ...mapMutations('users', {
-      setNickName: 'setNickName' // 将 `this.setNickName()` 映射为 `this.$store.commit('increment')`
+      setLogout: 'setLogout'
     }),
     showLogin() {
       this.showLoginModal = true
@@ -78,14 +80,31 @@ export default {
       this.showLoginModal = false
     },
     logout() {
-      this.setNickName('')
-      this.$cookies.remove('access_token')
-      this.$cookies.remove('nick_name')
+      this.$Modal.confirm({
+        title: '登出',
+        content: '确定登出吗？',
+        onOk: () => {
+          this.setLogout()
+          this.reload()
+        },
+        onCancel: () => {
+        }
+      });
     },
+    // 写文章
     newDrafts() {
-      this.$router.push({
-        name: 'newDrafts'
-      })
+      if(this.isLogin) {
+        this.$router.push({
+          name: 'NewDrafts'
+        })
+      } else {
+        this.showLogin()
+      }
+     
+    },
+    // 搜索
+    doSearch() {
+      this.$router.push({name: 'Search', query: {query:this.searchTxt}})
     }
   }
 }
@@ -143,6 +162,7 @@ export default {
     height: 100%;
     padding:0 1.2rem;
     margin: 0;
+    cursor: pointer;
     &.search {
       flex: 1 1 auto;
       justify-content: flex-end;

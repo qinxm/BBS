@@ -18,14 +18,14 @@ exports.getAccessToken = ctx => {
   };
   
   // 校验 Token
-  exports.verifyToken = async (ctx, userId) => {
+  exports.verifyToken = async (ctx, userObj) => {
     let token = this.getAccessToken(ctx);
     let verifyResult = await ctx.service.user.verifyToken(token);
     if (!verifyResult.verify) {
       ctx.helper.error(ctx, 401, verifyResult.message);
       return false;
     }
-    if (userId != verifyResult.message.id) {
+    if ((userObj.userId != verifyResult.message.id) && (userObj.authorid != verifyResult.message.id) ) {
       ctx.helper.error(ctx, 401, "用户 ID 与 Token 不一致");
       return false;
     }

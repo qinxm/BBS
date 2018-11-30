@@ -1,6 +1,6 @@
 <template>
   <section class="view">
-    <div class="main-area article-area shadow">
+    <div class="main-area article-area shadow" style="width:100%;">
       <article>
         <div class="author-info-block">
           <div class="lazy avatar avatar loaded" v-bind:style="{backgroundImage: avatarUrl}">
@@ -25,6 +25,7 @@
 import services from '@/config/services'
 
 export default {
+  name: 'PostDetail',
   data() {
     return {
       id: '',
