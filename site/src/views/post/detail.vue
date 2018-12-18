@@ -3,7 +3,7 @@
     <div class="main-area article-area shadow" style="width:100%;">
       <article>
         <div class="author-info-block">
-          <div class="lazy avatar avatar loaded" v-bind:style="{backgroundImage: avatarUrl}">
+          <div class="lazy avatar loaded" :style="{backgroundImage: avatarUrl}">
           </div>
           <div class="author-info-box">
             <a target="_blank" class="username ellipsis">{{info.author}}</a>
@@ -18,10 +18,50 @@
         <div class="article-content" v-html="info.message">
         </div>
       </article>
+      <div class="comment-list-box">
+        <div class="title">评论</div>
+        <div class="comment-form comment-form" >
+          <div class="lazy avatar avatar loaded" style='background-image: url("https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTL0ibqwcbPlAmBMul8psYKgMcRbfYP3K357ydshJ9YcazNj8iaaDGkeV03u5TyZswaZf2KpuJ7KdYHw/132");'> </div>
+          <div class="form-box">
+            <Input v-model="commentVal" placeholder="输入评论..." style="flex:1" />
+            <div class="action-box">
+              <div class="submit">
+                <Button type="primary" @click="submitComment">提交</Button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="comment-list">
+          <div class="item" v-for="item in commentList" :key="item.id">
+            <div class="comment">
+              <div class="user-popover-box popover">
+                <div class="lazy avatar loaded" :style="{backgroundImage: avatarUrl}">
+                </div>
+              </div>
+              <div class="content-box comment-divider-line">
+                <div class="meta-box" >
+                  <a>{{item.nickname}}</a>
+                </div>
+                <div class="content">
+                  {{item.comment}}
+                </div>
+                <div class="reply-stat">
+                  <time class="time">{{item.createtime | dateformatFromNow}}</time>
+                  <div class=" "> 
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </template>
 <script>
+import { mapGetters } from "vuex";
+
 import services from '@/config/services'
 
 export default {
@@ -30,12 +70,21 @@ export default {
     return {
       id: '',
       info: {},
-      avatarUrl: ''
+      avatarUrl: '',
+      commentVal: '',
+      commentList: []
     };
+  },
+  computed: {
+    ...mapGetters('users', {
+      userId: 'getUserId',
+      userName: 'getUserName'
+    }),
   },
   created() {
     this.id = this.$route.params.id;
     this.getInfo()
+    this.getComments()
   },
   methods: {
     async getInfo() {
@@ -44,6 +93,28 @@ export default {
       this.info = res.result
       console.log(this.info)
       this.avatarUrl = `url('${this.info.avatarurl}')`
+    },
+    async getComments() {
+      let res = await services.getPostComments({pid: this.id})
+      if (!this.$error(res)) return
+      this.commentList = res.result
+      // console.log(this.commentList)
+    },
+    async submitComment() {
+      if (!this.commentVal) {
+        this.$Message.error('请输入评论')
+        return
+      }
+      let res = await services.addComment({
+        pid: this.id,
+        authorId: Number(this.userId),
+        author: this.userName,
+        comment: this.commentVal
+      })
+      if(!this.$error(res)) return
+      this.$Message.success('提交成功')
+      this.commentVal = ''
+      this.getComments()
     }
   }
 };
@@ -60,6 +131,47 @@ article {
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #eee;
+}
+.comment-list {
+  margin: 0 1.666rem 0 4.85rem;
+  .item:not(:last-child) {
+    margin-bottom: 1.333rem;
+  }
+  .comment {
+    display: flex;
+    .meta-box {
+      display: flex;
+      align-items: center;
+      font-size: 1.083rem;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    .content {
+      margin-top: .55rem;
+      font-size: 1.083rem;
+      line-height: 1.833rem;
+      color: #505050;
+    }
+    .reply-stat {
+      display: flex;
+      margin: 1rem 0;
+      font-weight: 400;
+      .time {
+        font-size: 1.083rem;
+        color: #8a9aa9;
+        cursor: default;
+      }
+      .action-box {
+        flex: 0 0 auto;
+        display: flex;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        margin-left: auto;
+        min-width: 8.8rem;
+        color: #8a93a0;
+      }
+    }
+  }
 }
 .article-area {
   margin-bottom: 1.5rem;
@@ -95,5 +207,53 @@ article {
 }
 .views-count{
   margin-left: 10px;
+}
+.comment-list-box {
+  position: relative;
+  background-color: #fff;
+  .title {
+    color: #8a9aa9;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    padding: 1.67rem 0 5px;
+  }
+  .avatar {
+    margin: 0 1rem 0 0;
+    width: 2.667rem;
+    height: 2.667rem;
+    border-radius: 50%;
+  }
+  .comment-form {
+    display: flex;
+    position: relative;
+    padding: 1rem 1.333rem;
+    background-color: #fafbfc;
+    border-radius: 3px;
+    margin: 1.333rem 0;
+  }
+  .form-box {
+    flex: 1;
+    .action-box{
+      display: flex;
+      align-items: center;
+      margin: .65rem 0 0;
+      .submit {
+        // flex: 0 0 auto;
+        margin-left: auto;
+      }
+      .submit-btn{
+        flex: 0 0 auto;
+        margin-left: auto;
+        padding: .5rem 1.3rem;
+        font-size: 1.25rem;
+        color: #fff;
+        background-color: #027fff;
+        border-radius: 2px;
+        cursor: pointer;
+      }
+    }
+  }
+
 }
 </style>

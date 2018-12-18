@@ -1,0 +1,24 @@
+.ivu-btn-primary {
+  @include set_bg_color($default-color);
+}
+.main-header {
+  .nav-item {
+    @include set_color($default-color);
+  }
+}
+.theme-content {
+  div.theme {
+    &-theme1 {
+      background:$color-theme1;
+    }
+    &-theme2 {
+      background:$color-theme2;
+    }
+    &-theme3 {
+      background:$color-theme3;
+    }
+  }
+}
+.tag-link {
+  @include set_color($default-color);
+}

@@ -33,6 +33,16 @@
             <span class="nickname">{{nickName}}</span>
             <Button type="primary" @click="logout">登出</Button>
           </li>
+          <li class="nav-item">
+            <Poptip placement="bottom" width="200">
+              <span class="theme">主题</span>
+              <div slot="content" class="theme-content">
+                <div class="theme-theme1" @click="changeTheme('theme1')"></div>
+                <div class="theme-theme2" @click="changeTheme('theme2')"></div>
+                <div class="theme-theme3" @click="changeTheme('theme3')"></div>
+              </div>
+             </Poptip>
+          </li>
         </ul>
       </nav>
       
@@ -105,12 +115,24 @@ export default {
     // 搜索
     doSearch() {
       this.$router.push({name: 'Search', query: {query:this.searchTxt}})
+    },
+    changeTheme(theme) {
+      window.document.documentElement.setAttribute('data-theme', theme)
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.theme-content {
+  display: flex;
+  div {
+    width: 100%;
+    height: 30px;
+    margin: 5px;
+    border-radius: 5px;
+  }
+}
 .main-header {
   position: relative;
   top: 0;
@@ -169,11 +191,9 @@ export default {
       cursor: auto;
     }
     &.submit {
-      color: #007fff;
       position: relative;
     }
     &.auth {
-      color: #007fff;
       font-size: 14px;
       .login {
         &::after {
@@ -182,6 +202,7 @@ export default {
         }
       }
     }
+    
     &.logout{
       .nickname{
         font-size: 1rem;
@@ -191,6 +212,9 @@ export default {
     }
     &:last-child {
       padding-right:0;
+    }
+    span {
+      font-size: 14px;
     }
   }
 }

@@ -4,7 +4,7 @@
       <Scroll v-if="entryList.length" :on-reach-bottom="handleReachBottom" :height="contentHeight">
         <ul class="entry-list">
           <li class="item" v-for="item in entryList" :key="item.id">
-            <post-item :item="item"></post-item>
+            <post-item :item="item" @afterChangeLike="refresh(item)"></post-item>
             <!-- <div class="entry">
               <a> 
                 <div class="content-box">
@@ -95,6 +95,9 @@ export default {
   },
 
   methods: {
+    refresh(item) {
+      item.liketimes = item.liketimes + 1
+    },
     async doQuery() {
       this.params.pageNum = 1
       this.entryList = []

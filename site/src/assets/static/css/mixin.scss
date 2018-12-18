@@ -1,0 +1,26 @@
+
+@mixin set_theme($selector, $color){
+  #{$selector}: $color;
+  [data-theme="theme1"] & {
+    #{$selector}: $color-theme1;
+  }
+  [data-theme="theme2"] & {
+    #{$selector}: $color-theme2;
+  }
+  [data-theme="theme3"] & {
+    #{$selector}: $color-theme3; 
+  }
+}
+@mixin set_bg_color($color){/*设置背景颜色；*/
+  @include set_theme('background-color', $color);
+  @include set_theme('border-color', $color);
+}
+@mixin set_bd_color($color){/*设置边框颜色；*/
+  @include set_theme('border-color', $color);
+}
+@mixin set_bd_r_color($color){/*设置border-right；*/
+  @include set_theme('border-right', $color);
+}
+@mixin set_color($color){/*设置字体颜色；*/
+  @include set_theme('color', $color);
+}
