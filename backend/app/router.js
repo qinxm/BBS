@@ -20,8 +20,12 @@ module.exports = app => {
   router.post('/api/post/create',  verify,  controller.post.createAction)
   router.post('/api/post/getList', controller.post.getListAction)
   router.post('/api/post/getInfo', controller.post.getInfoAction)
+  router.post('/api/post/getComments', controller.post.getPostCommentsAction)
   router.post('/api/post/search', controller.post.searchAction)
-  router.post('/api/post/addlike', controller.post.addLikeAction)
+  router.post('/api/post/addLike', controller.post.addLikeAction)
+
+  router.post('/api/post/addComment', verify, controller.post.addCommentAction)
+  router.post('/api/post/getCommentList', controller.post.getCommentAction)
 
   //router.get('/user/loginAction', controller.user.loginAction);
 };
