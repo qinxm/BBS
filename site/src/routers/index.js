@@ -12,6 +12,7 @@ import PostDetail from '../views/post/detail.vue'
 import NewDrafts from '../views/editor/drafts/create.component.vue'
 import CategoryCreate from '../views/category/create.component.vue'
 import CategoryList from '../views/category/list.component.vue'
+import ThemeSelf from '../views/theme/self.component.vue'
 
 NProgress.configure({
   showSpinner: false
@@ -46,6 +47,11 @@ const routes = [{
     name: 'CategoryCreate',
     component: CategoryCreate,
   },
+  {
+    path: '/theme/self',
+    name: 'ThemeSelf',
+    component: ThemeSelf
+  }
   ]
 },{
   path: '/login',

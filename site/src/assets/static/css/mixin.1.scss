@@ -1,8 +1,10 @@
-
-$color-list: (primary:#2d8cf0, success:#19be6b, warning:#ff9900);
 @mixin set_theme($selector, $color){
-  // #{$selector}: map-get($color-list, $color);
   #{$selector}: $color;
+  @each $theme, $theme-color in $theme-list {
+    [data-theme="#{$theme}"] & {
+      #{$selector}: $theme-color
+    }
+  }
 }
 @mixin set_bg_color($color){/*设置背景颜色；*/
   @include set_theme('background-color', $color);

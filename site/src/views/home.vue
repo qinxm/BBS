@@ -3,7 +3,7 @@
     <div class="welcome__feed"> 
       <Scroll :on-reach-bottom="handleReachBottom" :height="contentHeight">
         <ul class="entry-list">
-          <li class="item" v-for="item in entryList" :key="item.id">
+          <li class="item" v-for="(item) in entryList" :key="item.id">
             <post-item :item="item" @afterChangeLike="refresh(item)"></post-item>
           </li>
         </ul>

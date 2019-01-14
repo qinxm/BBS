@@ -1,24 +1,46 @@
+// 样式设定
+.theme-content {
+  .theme {
+    @each $theme, $theme-color in $theme-list {
+      &-#{$theme} {
+        background-color: $theme-color;
+        border-radius: 5px;
+        display: inline-block;
+        min-width: 30px;
+        min-height: 20px;
+        padding: 0 5px;
+      }
+    }
+  }
+}
+.theme-color {
+  display: inline-block;
+  padding: 0 5px;
+  border-radius: 5px;
+}
+.ivu-menu-item {
+  font-size: #{$fontSize}px;
+}
 .ivu-btn-primary {
-  @include set_bg_color($default-color);
+  @include set_bg_color($buttonColor);
 }
 .main-header {
+  @include set_bg_color($bgColor);
+}
+.main-header {
+  .container {
+    @include set_bg_color($bgColor);
+  }
   .nav-item {
     @include set_color($default-color);
   }
 }
-.theme-content {
-  div.theme {
-    &-theme1 {
-      background:$color-theme1;
-    }
-    &-theme2 {
-      background:$color-theme2;
-    }
-    &-theme3 {
-      background:$color-theme3;
-    }
-  }
-}
 .tag-link {
   @include set_color($default-color);
+}
+
+@each $font-size in $font-size-list {
+  .fz#{$font-size} {
+    font-size: #{$font-size}px;
+  }
 }

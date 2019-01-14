@@ -30,7 +30,7 @@
       <template slot="likes" slot-scope="scope">
         <!-- {{ scope.row.likes.join(',') }} -->
         <div class="operations">
-          {{scrop.row.likes}}
+          {{scope.row.likes}}
           <div v-for="item in scope.row.likes" :key="item" class="operations-item">
              <Checkbox v-model="item.single">{{item.name}}</Checkbox>
           </div>

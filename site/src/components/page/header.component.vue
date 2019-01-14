@@ -34,14 +34,16 @@
             <Button type="primary" @click="logout">登出</Button>
           </li>
           <li class="nav-item">
-            <Poptip placement="bottom" width="200">
+            <!-- <Poptip placement="bottom" width="200">
               <span class="theme">主题</span>
               <div slot="content" class="theme-content">
                 <div class="theme-theme1" @click="changeTheme('theme1')"></div>
                 <div class="theme-theme2" @click="changeTheme('theme2')"></div>
                 <div class="theme-theme3" @click="changeTheme('theme3')"></div>
+                <div class="theme-theme4" @click="changeTheme('theme4')"></div>
               </div>
-             </Poptip>
+             </Poptip> -->
+             <router-link :to="{name: 'ThemeSelf'}"><Button type="text" >自定义主题</Button></router-link>
           </li>
         </ul>
       </nav>
@@ -139,7 +141,6 @@ export default {
   left: 0;
   right: 0;
   transition: all 0.2s;
-  background: #fff;
   border-bottom: 1px solid #f1f1f1;
   color: #909090;
   height: 5rem;

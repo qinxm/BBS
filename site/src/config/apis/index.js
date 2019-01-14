@@ -10,4 +10,6 @@ export default {
   'addLike': '/api/post/addLike',
   'addComment': '/api/post/addComment',
 
+  'createTheme': '/api/theme/create'
+
 }
