@@ -9,7 +9,6 @@ module.exports = app => {
   app.passport.mount('github');
   
   router.get('/', controller.home.index);
-  router.get('/bbs', controller.bbshome.index);
   router.post('/user/get/:id', controller.user.info);
 
   router.post('/api/users/login', controller.user.loginAction);
@@ -18,7 +17,7 @@ module.exports = app => {
   router.post('/user/delete', controller.user.deleteAction);
 
   router.post('/api/post/create',  verify,  controller.post.createAction)
-  router.post('/api/post/getList', controller.post.getListAction)
+  router.post('/api/post/getList',verify, controller.post.getListAction)
   router.post('/api/post/getInfo', controller.post.getInfoAction)
   router.post('/api/post/getComments', controller.post.getPostCommentsAction)
   router.post('/api/post/search', controller.post.searchAction)
@@ -26,6 +25,7 @@ module.exports = app => {
 
   router.post('/api/post/addComment', verify, controller.post.addCommentAction)
   router.post('/api/post/getCommentList', controller.post.getCommentAction)
-
+  
+  router.post('/api/theme/create', controller.theme.create)
   //router.get('/user/loginAction', controller.user.loginAction);
 };

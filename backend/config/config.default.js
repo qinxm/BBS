@@ -3,6 +3,8 @@
 module.exports = appInfo => {
   const config = (exports = {});
 
+  config.cssFileDir = '/Users/qinxm/Sites/BBS/github/BBS/site/src/assets/static/css';
+
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + "_1541594441036_7135";
 
@@ -13,16 +15,14 @@ module.exports = appInfo => {
     // 单数据库信息配置
     client: {
       // host
-      host: "106.12.13.62",
-      // host: '127.0.0.1',
+      host: '127.0.0.1',
       // 端口号
       port: "3306",
       // 用户名
       user: "bbs",
-      // user: 'root',
+      user: 'root',
       // 密码
-      password: "zXfNGc3G5kXepXcj",
-      // password: 'password',
+      password: 'password',
       // 数据库名
       database: "bbs"
     },

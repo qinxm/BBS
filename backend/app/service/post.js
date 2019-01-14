@@ -4,6 +4,7 @@ class UserService extends Service {
   // constructor(ctx) {
   //   super(ctx);
   // }
+  // 新建文章
   async create(obj) {
     const result = await this.app.mysql.insert('pre_forum_post', { 
       author: obj.author,
@@ -20,17 +21,26 @@ class UserService extends Service {
      });
     return result;
   }
+  // 查询文章列表
   async getList(obj) {
-    const result = await this.app.mysql.select('pre_forum_post', {
-      orders: [['pid','desc']],
-      limit: obj.pageSize,
-      offset: obj.pageNum-1
-    })
+    
     let totalResult = await this.app.mysql.query(`select count(*) as count from pre_forum_post `)
     let total = totalResult && totalResult[0].count
+   
     let pageNum = obj.pageNum
     let pageSize = obj.pageSize
     let pages = Math.ceil(total/pageSize)
+    let result
+    // 已全部加载完
+    if (total <= (obj.pageNum-1) * obj.pageSize) {
+      result = []
+    } else {
+      result = await this.app.mysql.select('pre_forum_post', {
+        orders: [['pid','desc']],
+        limit: obj.pageSize ,
+        offset: (obj.pageNum-1) * obj.pageSize
+      })
+    }
     return {
       list: result,
       total,
